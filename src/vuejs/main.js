@@ -21,7 +21,7 @@ const app = Vue.createApp({
   },
   methods: {
     makeMoney(){
-      this.money += this.income;
+      this.money += (this.income * this.profitMultiplier);
     },
     incomeIncrement(){
       this.money -= this.incomeCost;
