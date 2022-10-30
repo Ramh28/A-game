@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background-color: #333;
+  color: #d2d1d1;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.main__movements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 0 25px 0;
+}
+
+.main__player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 25px 0;
+  padding: 10px;
+  border: solid #FFF 1px;
+}
+
+.main__player img {
+  height: 100px;
+  padding: 0 10px;
+  border-right: solid #FFF 1px;
+}
+
+.main__player__details {
+  height: 100%;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.main__player__details p {
+  margin-bottom: 10px;
+}
+
+.updates,
+.city {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.updates__card,
+.city__card {
+  margin: 10px;
+  padding: 10px;
+  border: solid #fff 1px;
+}
+
+.updates__card,
+.city__card {
+  background-attachment: local;
+  background-size: cover;
+}
+
+.updates__card {
+  background-image: url(../src/imgs/01-Reuniones_nocturnas.gif);
+}
+
+.city__card {
+  background-image: url(../src/imgs/02-Cafe_del_pueblo.gif);
+}
+
+/*# sourceMappingURL=main.css.map */
