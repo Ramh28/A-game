@@ -7,13 +7,13 @@
   <title>A-Game</title>
   <link rel="stylesheet" href="./styles/main.css">
 </head>
-<body>
+<body id="app">
   <section class="main">
 
     <div class="main__movements">
       <p>♣ Movimientos actuales</p>
-      <label for="" class="main__movements--money">$ money: 7684684864684</label>
-      <label for="" class="main__movements--citycetns">♦ citycetns: 5464684684</label>
+      <label for="" class="main__movements--money">$ money: {{ Math.round(money) }}</label>
+      <label for="" class="main__movements--citycetns">♦ citycetns: {{ citycetns }}</label>
     </div>
 
     <div class="main__player">
@@ -24,20 +24,25 @@
           <p>Player755</p>
         </div>
         <div class="main__player__detail__profits">
-          <p class="main__player__details__profits--pasiveProfits">pasiveProfits: 55/s</p>
-          <p class="main__player__details__profits--activeProfits">activeProfits: 44/Tap</p>
+          <p class="main__player__details__profits--pasiveProfits">Passive Income: {{passiveIncome}}/s</p>
+          <p class="main__player__details__profits--activeProfits">Income: {{ income }}/Tap</p>
         </div>
       </div>
     </div>
 
-    <div class="main__botonesMejoras">
-      <button class="main__botonesMejoras--button">Nivel de pasivos<br>Costo: $$$</button>
-      <button class="main__botonesMejoras--button">Nivel de activos<br>Costo: $$$</button>
+    <button class="main__tap" 
+      @click="makeMoney">Click Here to make money</button>
+
+    <div class="main__carrousel">
+      <button class="main__carrousel--button"
+        @click="incomeIncrement">Income Level: {{incomeLevel}}<br>Up: {{ Math.round(incomeCost) }}</button>
+      <button class="main__carrousel--button"
+        @click="passiveIncomeIncrement">Passive Income Level: {{passiveIncomeLevel}}<br>Up: {{ Math.round(passiveIncomeCost) }}</button>
     </div>
 
   </section>
 
-  
+
 
   <section class="updates">
 
@@ -114,5 +119,8 @@
       </div>
     </div>
   </section>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="./src/vuejs/main.js"></script>
 </body>
 </html>
