@@ -40,6 +40,13 @@ const app = Vue.createApp({
     this.interval = setInterval(() => {
       this.money += this.profitMultiplier * this.passiveIncome; 
     }, 1000);
+
+    const list = document.querySelectorAll('.card');
+    function activateLink(){
+      this.classList.toggle('active');
+    }
+    list.forEach((item) =>
+      item.addEventListener('click', activateLink));
   }
 })
 app.mount("#app")

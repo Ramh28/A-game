@@ -26,80 +26,130 @@ body{
   align-items: center;
   flex-direction: column;
   margin: 50px 0;
-}
-.main__movements{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 
-  margin: 0 0 25px 0;
-}
-.main__player{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &__movements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    margin: 0 0 25px 0;
+  }
 
-  margin: 0 0 25px 0;
+  &__player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    margin: 0 0 25px 0;
+  
+    padding: 10px;
+    border: solid #FFF 1px;
 
-  padding: 10px;
-  border: solid #FFF 1px;
-}
-.main__player img{
-  height: 100px;
-  padding: 0 10px;
+    & img{
+      height: 100px;
+      padding: 0 10px;
+    
+      border-right: solid #FFF 1px;
+    }
 
-  border-right: solid #FFF 1px;
-}
-.main__player__details{
+    &__details{
 
-  height: 100%;
-  width: 100%;
+      height: 100%;
+      width: 100%;
+    
+      margin-left: 10px;
 
-  margin-left: 10px;
-}
-.main__player__details p{
-  margin-bottom: 10px;
-}
-.main__tap{
-  height: 70px;
-  width: 150px;
+      & p{
+        margin-bottom: 10px;
+      }
+    }
+  }
 
-  margin-bottom: 40px;
-}
-.main__carrousel{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &__tap{
+    height: 70px;
+    width: 150px;
+  
+    margin-bottom: 40px;
+  }
 
-  background-color: #242424;
+  &__carrousel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    background-color: #242424;
+
+    &--button{
+      padding: 10px;
+      margin: 20px 20px;
+    }
+  }
 }
-.main__carrousel--button{
-  padding: 10px;
-  margin: 20px 20px;
-}
+
 .updates,
 .city{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-}
-.updates__card,
-.city__card{
-  margin: 10px;
-  padding: 10px;
 
-  border: solid #fff 1px;
+  & .card{
+    margin: 10px;
+    padding: 10px;
+
+    height: 100px;
+    width: 157px;
+    border: solid #fff 1px;
+    border-radius: 10px;
+
+    color: #fff;
+
+    background-attachment: local;
+    background-size: cover;
+
+    &__details{
+      display: none;
+      transition: 0.2s;
+
+      p{
+        font-size: 60%;
+        width: 80%;
+      }
+
+      &--button{
+        padding: 5px 5px;
+        border-radius: 10px;
+        border: white 2px solid;
+        background: transparent;
+
+        color: #ffffff;
+        font-size: 65%;
+
+        cursor: pointer;
+      }
+
+      &--button:hover{
+        margin-bottom: 15px;
+
+        background: #ffffff;
+        color: black;
+      }
+    }
+  }
+
 }
-.updates__card,
-.city__card{
-  background-attachment: local;
-  background-size: cover;
+.active .card__details{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
-.updates__card{
+.updates .card{
   background-image: url(../src/imgs/01-Reuniones_nocturnas.gif);
+  transition: 0.2s;
 }
-.city__card{
+.city .card{
   background-image: url(../src/imgs/02-Cafe_del_pueblo.gif);
+  transition: 0.2s;
 }
