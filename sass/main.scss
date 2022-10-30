@@ -25,7 +25,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px 0;
+  margin: 50px 0;
 }
 .main__movements{
   display: flex;
@@ -57,11 +57,26 @@ body{
   width: 100%;
 
   margin-left: 10px;
-
-  // border: solid #898989 1px;
 }
 .main__player__details p{
   margin-bottom: 10px;
+}
+.main__tap{
+  height: 70px;
+  width: 150px;
+
+  margin-bottom: 40px;
+}
+.main__carrousel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #242424;
+}
+.main__carrousel--button{
+  padding: 10px;
+  margin: 20px 20px;
 }
 .updates,
 .city{
@@ -77,10 +92,6 @@ body{
 
   border: solid #fff 1px;
 }
-// .updates__card__details,
-// .city__card__details{
-//   // display: none;
-// }
 .updates__card,
 .city__card{
   background-attachment: local;
