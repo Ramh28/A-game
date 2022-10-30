@@ -35,9 +35,11 @@
 
     <div class="main__carrousel">
       <button class="main__carrousel--button"
-        @click="incomeIncrement">Income Level: {{incomeLevel}}<br>Up: {{ Math.round(incomeCost) }}</button>
+        @click="incomeIncrement" 
+        :disabled = "money < incomeCost">Income Level: {{incomeLevel}}<br>Up: {{ Math.round(incomeCost) }}</button>
       <button class="main__carrousel--button"
-        @click="passiveIncomeIncrement">Passive Income Level: {{passiveIncomeLevel}}<br>Up: {{ Math.round(passiveIncomeCost) }}</button>
+        @click="passiveIncomeIncrement"
+        :disabled = "money < passiveIncomeCost" >Passive Income Level: {{passiveIncomeLevel}}<br>Up: {{ Math.round(passiveIncomeCost) }}</button>
     </div>
 
   </section>
