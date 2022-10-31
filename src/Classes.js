@@ -1,51 +1,73 @@
 class card {
 
-    constructor ({name, desc, img, level}) {
+    constructor ({name, desc, img, level, levelCost, percentIncrease}) {
         this.name = name;
         this.desc = desc;
         this.img = img;
         this.level = level;
+        this.levelCost = levelCost
+        this.PercentIncrease = percentIncrease; 
+    }
+
+    levelIncrement({money}){
+        money -= this.levelCost;
+        this.level ++;
+        this.levelCost = this.levelCost * this.percentIncrease;
+
     }
 
 }
 
 class level extends card {
 
-    constructor ({name, desc, img, level, cost, multiplier}) {
+    constructor ({name, desc, img, level,levelCost, percentIncrease, multiplier}) {
 
-        super(name, desc, img, level);
+        super(name, desc, img, level, levelCost, percentIncrease);
 
-        this.cost = cost;
         this.multiplier = multiplier;
     }
+
+
 
 }
 
 class city extends card {
 
-    constructor ({name, desc, img, level, egress, cost, amountOfProperties, tax}) {
+    constructor ({name, desc, img, level, levelCost, percentIncrease, egress, cost, amountOfProperties, taxIncrement}) {
         
-        super(name, desc, img, level);
+        super(name, desc, img, level, levelCost, percentIncrease);
 
         this.egress = egress;
         this.cost = cost;
-        this. amountOfProperties = amountOfProperties;
-        this.tax = tax;
+        this.amountOfProperties = amountOfProperties;
+        this.taxIncrement = taxIncrement;
 
     }
+
+
 }
 
 class business extends card {
     
-    constructor({name, desc, img, level, amountOfCitizens, amountOfBusiness, BusinessMultiplier}){
+    constructor({name, desc, img, level, levelCost, percentIncrease, amountOfCitizens, citizenspercentIncrease, amountOfBusiness, amountOfBusinessCost, businessMultiplier, businessQuantityIncreasePercentage}){
 
-        super(name, desc, img, level);
+        super(name, desc, img, level, levelCost, percentIncrease);
 
         this.amountOfBusiness = amountOfBusiness;
+        this.amountOfBusinessCost = amountOfBusinessCost
         this.amountOfCitizens = amountOfCitizens;
-        this.amountOfProperties = amountOfProperties;
+        this.citizenspercentIncrease = citizenspercentIncrease;
+        this.businessMultiplier = businessMultiplier;
+        this.businessQuantityIncreasePercentage = businessQuantityIncreasePercentage;
     }
 
+    IncreaseAmount (money) {
+        money -= this.amountOfBusinessCost;
+        this.amountOfBusiness++;
+        this.amountOfBusinessCost *= this.businessQuantityIncreasePercentage;
+        
+        this.amountOfCitizens *= this.citizenspercentIncrease
+    }
 }
 
 class player{
